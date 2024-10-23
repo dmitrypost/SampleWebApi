@@ -1,0 +1,39 @@
+@SampleWebApi_HostAddress = http://localhost:5262
+
+### Get a User by ID
+GET {{SampleWebApi_HostAddress}}/User/1
+Accept: application/json
+
+###
+
+### Create a new User
+POST {{SampleWebApi_HostAddress}}/User
+Content-Type: application/json
+Accept: application/json
+
+{
+    "firstName": "Dmitry",
+    "lastName": "Post",
+    "email": "dmitrypost@email.com"
+}
+
+###
+
+### Update an existing User
+PUT {{SampleWebApi_HostAddress}}/User
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": 1,
+    "firstName": "Dmitry",
+    "lastName": "Post",
+    "email": "dmitrypost@email.com"
+}
+
+###
+
+### Delete a User by ID
+DELETE {{SampleWebApi_HostAddress}}/User/1
+Accept: application/json
+

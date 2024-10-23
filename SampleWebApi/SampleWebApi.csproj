@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>False</InvariantGlobalization>
+    <PublishAot>False</PublishAot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.1.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="NLog.Database" Version="5.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SampleWebApi.Core\SampleWebApi.Core.csproj" />
+    <ProjectReference Include="..\SampleWebApi.Infrastructure\SampleWebApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\SampleWebApi.Shared\SampleWebApi.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
