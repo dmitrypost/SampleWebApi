@@ -1,21 +1,13 @@
 ﻿using Autofac;
+using SampleWebApi.Extensions;
 
-public class Startup
+public class Startup(IConfiguration configuration)
 {
-    public IConfiguration Configuration { get; }
-
-    public Startup(IConfiguration configuration)
-    {
-        Configuration = configuration;
-    }
-
     // This method gets called by the runtime to configure services.
-    // Add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-        // Add services to the IServiceCollection.
         services.AddControllers();
-        // Add other required services like authentication, authorization, etc.
+        services.AddJwtServices();
         //services.AddSwaggerGen(); // Example: Adding Swagger for API documentation
     }
 
@@ -43,12 +35,12 @@ public class Startup
 
         app.UseHttpsRedirection();
         app.UseRouting();
-        app.UseAuthentication();  // Optional: Add authentication middleware
+        app.UseAuthentication(); 
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>
         {
-            endpoints.MapControllers(); // Configure endpoint routing for controllers
+            endpoints.MapControllers();
         });
     }
 }
