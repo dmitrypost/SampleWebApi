@@ -3,7 +3,7 @@
     public interface ILogger
     {
         void LogInformation(string message);
-        void LogError(string message, Exception ex);
+        void LogError(Exception ex, string message);
     }
 
     public class Logger(NLog.ILogger logger) : ILogger
@@ -13,7 +13,7 @@
             logger.Info(message);
         }
 
-        public void LogError(string message, Exception ex)
+        public void LogError(Exception ex, string message)
         {
             logger.Error(ex, message);
         }

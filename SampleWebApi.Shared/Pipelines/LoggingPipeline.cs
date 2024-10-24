@@ -30,7 +30,7 @@ namespace SampleWebApi.Shared.Pipelines
                 }
                 catch (NotSupportedException ex)
                 {
-                    logger.LogError($"[Serialization ERROR] {requestNameWithGuid} Could not serialize the request.", ex);
+                    logger.LogError(ex,$"[Serialization ERROR] {requestNameWithGuid} Could not serialize the request.");
                 }
 
                 try
@@ -39,7 +39,7 @@ namespace SampleWebApi.Shared.Pipelines
                 }
                 catch (Exception ex)
                 {
-                    logger.LogError($"{requestNameWithGuid}; {requestJson}", ex);
+                    logger.LogError(ex,$"{requestNameWithGuid}; {requestJson}");
                     throw;
                 }
                 

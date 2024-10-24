@@ -5,6 +5,7 @@ using SampleWebApi.Infrastructure.Command.Requests;
 
 namespace SampleWebApi.Controllers
 {
+    // [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class UserController(IMediator mediator) : ControllerBase

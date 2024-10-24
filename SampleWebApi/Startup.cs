@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using SampleWebApi.Extensions;
+using SampleWebApi.Middleware;
 
 public class Startup(IConfiguration configuration)
 {
@@ -37,6 +38,7 @@ public class Startup(IConfiguration configuration)
         app.UseRouting();
         app.UseAuthentication(); 
         app.UseAuthorization();
+        app.UseMiddleware<ErrorHandlingMiddleware>();
 
         app.UseEndpoints(endpoints =>
         {
