@@ -16,7 +16,7 @@ namespace SampleWebApi.Autofac
                     .InstancePerLifetimeScope();
 
             builder.RegisterType<PasswordHashing>()
-                .As<IPasswordHashing>()
+                .As<IHashPasswords>()
                 .InstancePerLifetimeScope();
         }
     }

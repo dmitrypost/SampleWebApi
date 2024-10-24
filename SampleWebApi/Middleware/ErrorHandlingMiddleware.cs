@@ -1,5 +1,4 @@
-﻿
-using System.Net;
+﻿using System.Net;
 using ILogger = SampleWebApi.Shared.Logging.ILogger;
 
 namespace SampleWebApi.Middleware
@@ -17,6 +16,10 @@ namespace SampleWebApi.Middleware
                 logger.LogError(ex, "An unhandled exception has occurred.");
 
                 await HandleExceptionAsync(context, ex);
+
+#if DEBUG
+                throw;
+#endif
             }
         }
 

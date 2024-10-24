@@ -6,7 +6,7 @@ using SampleWebApi.Infrastructure.Helpers;
 
 namespace SampleWebApi.Infrastructure.Command.Handlers
 {
-    public class AuthenticateHandler(IUnitOfWork unitOfWork, IPasswordHashing passwordHashing, ITokenGenerator tokenGenerator) : IRequestHandler<AuthenticateRequest, AuthenticateResponse>
+    public class AuthenticateHandler(IUnitOfWork unitOfWork, IHashPasswords hashPasswords, ITokenGenerator tokenGenerator) : IRequestHandler<AuthenticateRequest, AuthenticateResponse>
     {
         public async Task<AuthenticateResponse> Handle(AuthenticateRequest request, CancellationToken cancellationToken)
         {
@@ -23,7 +23,7 @@ namespace SampleWebApi.Infrastructure.Command.Handlers
                     };
                 }
 
-                var isValidPassword = passwordHashing.VerifyPassword(request.Password, user.PasswordHash);
+                var isValidPassword = hashPasswords.VerifyPassword(request.Password, user.PasswordHash);
 
                 if (!isValidPassword)
                     return new AuthenticateResponse

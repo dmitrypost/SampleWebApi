@@ -25,8 +25,8 @@ namespace SampleWebApi.Shared.Pipelines
                 var requestJson = string.Empty;
                 try
                 {
-                    //requestJson = JsonConvert.SerializeObject(request);
-                    //logger.LogInformation($"[PROPS] {requestNameWithGuid} {requestJson}");
+                    requestJson = JsonConvert.SerializeObject(request);
+                    logger.LogInformation($"[PROPS] {requestNameWithGuid} {requestJson}");
                 }
                 catch (NotSupportedException ex)
                 {

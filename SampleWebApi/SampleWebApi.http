@@ -14,7 +14,8 @@ Accept: application/json
 {
     "firstName": "Dmitry",
     "lastName": "Post",
-    "email": "dmitrypost@email.com"
+    "email": "dmitrypost2@email.com",
+    "password": "test"
 }
 
 ###
@@ -34,6 +35,6 @@ Accept: application/json
 ###
 
 ### Delete a User by ID
-DELETE {{SampleWebApi_HostAddress}}/User/1
+DELETE {{SampleWebApi_HostAddress}}/User/2
 Accept: application/json
 

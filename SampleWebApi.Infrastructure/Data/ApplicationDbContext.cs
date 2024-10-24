@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Data;
+using SampleWebApi.Core.Models;
 
 namespace SampleWebApi.Infrastructure.Data
 {
@@ -7,6 +8,7 @@ namespace SampleWebApi.Infrastructure.Data
     {
         public IDbConnection Connection => Database.GetDbConnection();
         public DbSet<User> Users { get; set; }
+        public DbSet<Log> Logs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -5,13 +5,13 @@ using System.Text;
 
 namespace SampleWebApi.Infrastructure.Helpers
 {
-    public interface IPasswordHashing
+    public interface IHashPasswords
     {
         string HashPassword(string password);
         bool VerifyPassword(string password, string hash);
     }
 
-    public class PasswordHashing : IPasswordHashing
+    public class PasswordHashing : IHashPasswords
     {
         private const int SaltSize = 16; 
         private const int Iterations = 10000; 

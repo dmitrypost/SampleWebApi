@@ -99,3 +99,4 @@ coverage/
 *.sublime-workspace
 *.sublime-project
 *.vs/
+/SampleWebApi/.env

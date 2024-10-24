@@ -13,8 +13,8 @@ namespace SampleWebApi.Infrastructure.Data
                     Id = 1,
                     FirstName = "Dmitry",
                     LastName = "Post",
-                    CreatedDate = DateTime.Now,
-                    Email = "dmitrypost@email.com"
+                    Email = "dmitrypost@email.com",
+                    PasswordHash = "SZ6O6PbFqal7qNepYj3chw==:8lnGbnnfnQyJdsCeBXZoO6beNP2uy2leFxz+rIU3f2w="
                 }
             );
 
